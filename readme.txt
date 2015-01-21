@@ -11,7 +11,7 @@ License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Look up items in object cache.
 
 == Description ==
-Are you running an object cache such as Batcache and/or memcached? Want to see if cache is working?
+Are you running an object cache like memcached? Want to see if cache is working?
 
 
 == Installation ==
