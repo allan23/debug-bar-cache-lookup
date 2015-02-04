@@ -21,3 +21,4 @@ before_script:
 
 script:
  - $WP_DEVELOP_DIR/php-codesniffer/scripts/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php
+ 
