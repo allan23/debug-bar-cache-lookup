@@ -18,7 +18,7 @@
         <!--
         We may also want to to include all the rules in a standard
         -->
-         <rule ref="SavvisStandard" />
+
         <rule ref="WordPress">
 
                 <!--
