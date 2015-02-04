@@ -20,5 +20,5 @@ before_script:
 - phpenv rehash
 
 script:
- - $WP_DEVELOP_DIR/php-codesniffer/scripts/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php
+ - $WP_DEVELOP_DIR/php-codesniffer/scripts/phpcs -p -s -v -n . --standard=WordPress --extensions=php
  
