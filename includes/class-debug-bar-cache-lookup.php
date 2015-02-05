@@ -12,10 +12,7 @@ class Debug_Bar_Cache_Lookup extends Debug_Bar_Panel {
 	}
 
 	function render() {
-		global $wp_object_cache;
-		ob_start();
 		include DBCL_PATH . 'views/searchform.php';
-		echo ob_get_clean();
 	}
 	
 

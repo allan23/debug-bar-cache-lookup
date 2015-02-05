@@ -1,3 +1,4 @@
+<?php /** View for the search form. **/ ?>
 <div id="dbcl_panel">	
 	<form id="dbcl_form">
 		<p>Enter the cache key and cache group:</p>

@@ -67,16 +67,20 @@ add_action( 'debug_bar_enqueue_scripts', 'dbcl_enqueue' );
  */
 function dbcl_ajax() {
 	check_ajax_referer( 'dbcl_security', 'security' );
-	$dbcl_key	 = sanitize_text_field( $_POST[ 'dbcl_key' ] );
+	if ( isset( $_POST[ 'dbcl_key' ] ) || isset( $_POST[ 'dbcl_group' ] ) ) {
+		return wp_send_json_error();
+	}
+	$dbcl_key = sanitize_text_field( $_POST[ 'dbcl_key' ] );
+
 	$dbcl_group	 = sanitize_text_field( $_POST[ 'dbcl_group' ] );
 	$cache		 = wp_cache_get( $dbcl_key, $dbcl_group );
-	if (!$cache){
+	if ( !$cache ) {
 		return wp_send_json_error();
 	}
 	ob_start();
-	print_r($cache);
-	$cache=  ob_get_clean();
-	return wp_send_json_success(array('cache'=>$cache));
+	print_r( $cache );
+	$cache = ob_get_clean();
+	return wp_send_json_success( array( 'cache' => $cache ) );
 	die();
 }
 
