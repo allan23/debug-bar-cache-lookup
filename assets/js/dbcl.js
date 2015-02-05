@@ -1,6 +1,7 @@
 ( function ( $ ) {
-    $( '#dbcl_form' ).submit( function ( e ) {
+    $( document ).on( 'submit', '#dbcl_form', function ( e ) {
         e.preventDefault();
+        $( '#dbcl_results' ).empty();
         var dbcl_data = {
             action: 'dbcl',
             dbcl_key: $( '#dbcl_key' ).val(),
@@ -8,10 +9,10 @@
             security: dbcl.security
         }
         $.post( ajaxurl, dbcl_data, function ( res ) {
-            if (true === res.success){
-               $('#dbcl_results').html(res.data.cache);
-            }else{
-                alert('No cache data found.');
+            if ( true === res.success ) {
+                $( '#dbcl_results' ).html( res.data.cache );
+            } else {
+                alert( 'No cache data found.' );
             }
         } );
     } )

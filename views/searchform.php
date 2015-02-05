@@ -11,6 +11,6 @@
 		<input type="text" id="dbcl_group" name="dbcl_group">
 		</p>
 		<p class="center"><input type="submit" value="Lookup" class="button button-primary"></p>
-	</form>
+	</form><br/>
 	<pre id="dbcl_results"></pre>
 </div>

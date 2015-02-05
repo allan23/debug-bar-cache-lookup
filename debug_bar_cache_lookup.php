@@ -56,7 +56,7 @@ add_filter( 'debug_bar_panels', 'dbcl_add_panel' );
  */
 function dbcl_enqueue() {
 	wp_enqueue_style( 'dbcl-css', DBCL_URL . 'assets/css/dbcl.css', array(), '20150113' );
-	wp_enqueue_script( 'dbcl-js', DBCL_URL . 'assets/js/dbcl.js', array( 'jquery' ), '20150113', true );
+	wp_enqueue_script( 'dbcl-js', DBCL_URL . 'assets/js/dbcl.js', array( 'jquery' ), '20150113' );
 	wp_localize_script( 'dbcl-js', 'dbcl', array( 'security' => wp_create_nonce( "dbcl_security" ) ) );
 }
 
@@ -67,7 +67,7 @@ add_action( 'debug_bar_enqueue_scripts', 'dbcl_enqueue' );
  */
 function dbcl_ajax() {
 	check_ajax_referer( 'dbcl_security', 'security' );
-	if ( isset( $_POST[ 'dbcl_key' ] ) || isset( $_POST[ 'dbcl_group' ] ) ) {
+	if ( !isset( $_POST[ 'dbcl_key' ] ) || !isset( $_POST[ 'dbcl_group' ] ) ) {
 		return wp_send_json_error();
 	}
 	$dbcl_key = sanitize_text_field( $_POST[ 'dbcl_key' ] );
