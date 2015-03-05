@@ -1,4 +1,4 @@
-/*global dbcl:false, ajaxurl:false, */
+/*global dbcl:false, ajaxurl:false */
 ( function ( $ ) {
     $( document ).on( 'submit', '#dbcl_form', function ( e ) {
         e.preventDefault();
