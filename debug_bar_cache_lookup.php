@@ -75,10 +75,9 @@ function dbcl_ajax() {
 		return wp_send_json_error();
 	}
 	ob_start();
-	var_export( $cache );
+	print_r( $cache );
 	$cache = ob_get_clean();
 	return wp_send_json_success( array( 'cache' => $cache ) );
-	die();
 }
 
 add_action( 'wp_ajax_dbcl', 'dbcl_ajax' );

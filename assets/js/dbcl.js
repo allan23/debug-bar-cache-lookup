@@ -1,3 +1,4 @@
+/*global dbcl:false, ajaxurl:false, */
 ( function ( $ ) {
     $( document ).on( 'submit', '#dbcl_form', function ( e ) {
         e.preventDefault();
@@ -12,8 +13,8 @@
             if ( true === res.success ) {
                 $( '#dbcl_results' ).html( res.data.cache );
             } else {
-                alert( 'No cache data found.' );
-            };
+                $( '#dbcl_results' ).html( 'No cache data found.' );
+            }
         } );
     } );
 } )( jQuery );
