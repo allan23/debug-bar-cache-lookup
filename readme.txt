@@ -22,6 +22,17 @@ Are you running an object cache like memcached? Want to see if cache is working?
 2. Activate Debug Bar Cache Lookup through the 'Plugins' menu in WordPress.
 3. When you activate the Debug Bar plugin, 'Cache Lookup' will be added to debug menu.
 
+== Frequently Asked Questions ==
+
+= Why would I need this? =
+
+Sometimes there are times when you need to verify that an object is being properly cached. 
+Instead of using WP CLI or other tools, you can look it up from within the Debug Bar.
+
+== Screenshots ==
+
+1. The 'Cache Lookup'.
+
 == Changelog ==
 
 = 0.1.0 =
