@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Debug Bar Cache Lookup
  * Plugin URI:  http://wordpress.org/plugins
- * Description: Look up items in object cache.
+ * Description: Look up items in object cache. Requires Debug Bar Plugin.
  * Version:     0.1.0
  * Author:      Allan Collins
  * Author URI:  http://www.allancollins.net/
