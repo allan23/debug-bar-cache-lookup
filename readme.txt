@@ -22,12 +22,6 @@ Are you running an object cache like memcached? Want to see if cache is working?
 2. Activate Debug Bar Cache Lookup through the 'Plugins' menu in WordPress.
 3. When you activate the Debug Bar plugin, 'Cache Lookup' will be added to debug menu.
 
-== Frequently Asked Questions ==
-
-
-== Screenshots ==
-
-
 == Changelog ==
 
 = 0.1.0 =
