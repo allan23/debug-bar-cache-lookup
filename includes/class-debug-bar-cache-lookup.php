@@ -3,7 +3,7 @@
 class Debug_Bar_Cache_Lookup extends Debug_Bar_Panel {
 
 	function init() {
-		$this->title( __( 'Cache Lookup', 'dbcl' ) );
+		$this->title( esc_html__( 'Cache Lookup', 'dbcl' ) );
 	}
 
 	function prerender() {
@@ -14,6 +14,6 @@ class Debug_Bar_Cache_Lookup extends Debug_Bar_Panel {
 	function render() {
 		include DBCL_PATH . 'views/searchform.php';
 	}
-	
+
 
 }

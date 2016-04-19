@@ -2,9 +2,9 @@
 
 /**
  * Plugin Name: Debug Bar Cache Lookup
- * Plugin URI:  http://wordpress.org/plugins
+ * Plugin URI:  https://wordpress.org/plugins/debug-bar-cache-lookup/
  * Description: Look up items in object cache. Requires Debug Bar Plugin.
- * Version:     0.1.0
+ * Version:     0.1.1
  * Author:      Allan Collins
  * Author URI:  http://www.allancollins.net/
  * License:     GPLv2+
@@ -40,12 +40,15 @@ define( 'DBCL_PATH', dirname( __FILE__ ) . '/' );
 
 /**
  * Add the panel to the Debug Bar.
+ *
  * @param array $panels Array of panel objects.
+ *
  * @return array Array of panel objects.
  */
 function dbcl_add_panel( $panels ) {
 	require DBCL_PATH . 'includes/class-debug-bar-cache-lookup.php';
 	array_push( $panels, new Debug_Bar_Cache_Lookup() );
+
 	return $panels;
 }
 
@@ -67,16 +70,17 @@ add_action( 'debug_bar_enqueue_scripts', 'dbcl_enqueue' );
  */
 function dbcl_ajax() {
 	check_ajax_referer( 'dbcl_security', 'security' );
-	$dbcl_key	 = filter_input( INPUT_POST, 'dbcl_key', FILTER_SANITIZE_STRING );
-	$dbcl_group	 = filter_input( INPUT_POST, 'dbcl_group', FILTER_SANITIZE_STRING );
+	$dbcl_key   = filter_input( INPUT_POST, 'dbcl_key', FILTER_SANITIZE_STRING );
+	$dbcl_group = filter_input( INPUT_POST, 'dbcl_group', FILTER_SANITIZE_STRING );
 
 	$cache = wp_cache_get( $dbcl_key, $dbcl_group );
-	if ( !$cache ) {
+	if ( ! $cache ) {
 		return wp_send_json_error();
 	}
 	ob_start();
 	print_r( $cache );
-	$cache = ob_get_clean();
+	$cache = esc_html( ob_get_clean() );
+
 	return wp_send_json_success( array( 'cache' => $cache ) );
 }
 

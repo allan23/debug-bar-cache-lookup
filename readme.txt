@@ -3,8 +3,8 @@ Contributors:      collinsinternet
 Donate link:       
 Tags: debug bar, object cache, memcached, memcache
 Requires at least: 3.9
-Tested up to:      4.1.1
-Stable tag:        0.1.0
+Tested up to:      4.5
+Stable tag:        0.1.1
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,10 +35,13 @@ Instead of using WP CLI or other tools, you can look it up from within the Debug
 
 == Changelog ==
 
+= 0.1.1 =
+* Minor security update.
+
 = 0.1.0 =
 * First release
 
 == Upgrade Notice ==
 
-= 0.1.0 =
-First Release
+= 0.1.1 =
+Security fixes.
